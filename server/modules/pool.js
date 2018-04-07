@@ -1,6 +1,14 @@
-const Pool = require('pg').Pool();
+const pg = require('pg');
+const Pool = pg.Pool;
 const url = require('url');
-let config;
+const config =  {
+    database: 'hadar',
+    host: 'localhost',
+    port: 5432,
+    max: 10,
+    idleTimeOutMillis: 30000
+}
+
 const pool = new Pool(config);
 
 pool.on('connect', (client) => {
@@ -9,6 +17,6 @@ pool.on('connect', (client) => {
 pool.on('error', (err, client) => {
     console.log('error connecting to pg', error);
     process.exit(-1);
-})
+});
 
 module.exports = pool;
