@@ -1,26 +1,33 @@
 
 <div class = "container">
-    <form ng-submit="vm.addNewMovie(vm.movieToAdd)">
-        <input type="text" placeholder="name" ng-model="vm.movieToAdd.name">
-        <input type="date" placeholder="date" ng-model="vm.movieToAdd.date">
+    <!-- //old version -->
+    <!-- <form ng-submit="vm.addNewMovie(vm.movieToAdd)"> -->
+        <!-- <input type="text" placeholder="Movie title" ng-model="vm.movieToAdd"> -->
+        <!-- <input type="date" placeholder="date" ng-model="vm.movieToAdd.date">
         <input type="number" placeholder="length" ng-model="vm.movieToAdd.length">
-        <input type="img" placeholder="Picture" ng-model="vm.movieToAdd.pic">
-        <select  ng-model="vm.movieToAdd.genre_id" >
-           
-            <!-- <option value="">---Please select---</option> -->
-            <option value="2">{{genre_id}}</option>
+        <input type="img" placeholder="Picture" ng-model="vm.movieToAdd.pic"> -->
+        <!-- <select  ng-model="vm.movieToAdd.genre_id" > -->
         
-            <option ng-repeat="genres in vm.genre.list" value="{{genre.id}}">{{genre}}</option>
-        </select>
+     <form ng-submit="vm.getMovies(vm.movieToAdd)">
+        <input type="text" placeholder="Movie title search" ng-model="vm.movieToAdd">
+        {{vm.movieToAdd}}
+
+            <!-- <option value="">---Please select---</option> -->
+            <!-- <option value="2">{{genre_id}}</option> -->
+        
+            <!-- <option ng-repeat="genres in vm.genre.list" value="{{genre.id}}">{{genre}}</option> -->
+        <!-- </select> -->
         <input type="submit">
     </form>
 
     <div ng-hide="vm.movies.list.length">No Movies.</div>
-    <div ng-repeat="movies in vm.movies.list">
-        <p>movie name: {{movies.movie_name}}<p>
-        <div><img ng-src="{{movies.movie_pic}}"></div>
-        <p>Release Date: {{movies.movie_date| date: 'MMMM dd, yyyy' }}</p>
-        <p>Movie Length: {{movies.movie_length}}</p>
-        <p>Genre: {{movies.genre}}</p>
-    </div>
+        movie:<div ng-repeat: {{movies in movieToAdd}}></div>
+
+    <!-- <div ng-repeat="movieToAdd in vm.movies.list"> -->        
+        <!-- <img ng-src = {{vm.movies.list.poster_path}}> -->
+        <!-- <p>Release Date: {{movies.list.movie_date| date: 'MMMM dd, yyyy' }}</p>
+        <p>Movie Length: {{movies.list.movie_length}}</p>
+        <p>Genre: {{movies.list.genre}}</p> -->
+    
 </div>
+ 

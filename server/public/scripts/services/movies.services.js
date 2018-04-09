@@ -4,7 +4,8 @@ app.service('CollectionService', ['$http', function($http) {
 
     // assigns a genre to a movie
     self.assignments = { list: [] };
-    self.movies = { list: [] };
+    self.movies = { };
+    
 
 // add new movie to Database
     self.addNewMovie = function(movieToAdd) {
@@ -23,18 +24,19 @@ app.service('CollectionService', ['$http', function($http) {
 
 
     //Get movies from database 
-self.getMovies = function(){
+self.getMovies = function(Movie){
     console.log('IN GET');
     $http ({
         method: 'GET',
-        url: '/movies'/// changed from get to movies
+        url : 'https://api.themoviedb.org/3/search/movie?api_key=246b82ea160759e257c1d14485027efc&language=en-US&page=1&query=' + Movie
     }).then(function(response){
         console.log('IN then GET', response);
-        self.movies.list=response.data;
-        console.log(response.data);
+        self.movies=response.data.results[0].title;
+        console.log(self.movies);
     }).catch(function(error) {
         console.log('error');
     })
 }
-self.getMovies();
+// self.addNewMovie();
+// self.getMovies();
 }]);

@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 const movieRouter= require('./routes/movies.router.js');
-let PORT = process.env.PORT || 5000;
+let PORT = process.env.PORT || 5001;
 
 app.use(express.static('server/public'));
 

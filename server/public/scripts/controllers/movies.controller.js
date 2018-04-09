@@ -5,13 +5,14 @@ app.controller('MoviesController', ['CollectionService', function(CollectionServ
     self.movies = CollectionService.movies;
     self.assignments = CollectionService.assignments;
 
-    self.movieToAdd = {name:'', pic:'', date:'', length:'', genre_id:''};
+    // self.movieToAdd = {name:'', pic:'', date:'', length:'', genre_id:''};
+    // self.movieToAdd = {}
     console.log('line 7');
 
     self.addNewMovie = CollectionService.addNewMovie 
         // CollectionService.addNewMovie(newMovie);
 
-        self.getMovies =  CollectionService.getMovies
+    self.getMovies =  CollectionService.getMovies
 
     self.removeMovie= function (movieId) {
         // CollectionService.removeMovie(movieId);
