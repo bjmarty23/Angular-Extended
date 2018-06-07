@@ -6,7 +6,7 @@ app.controller('MoviesController', ['CollectionService', function(CollectionServ
     self.assignments = CollectionService.assignments;
 
     self.movieToAdd = {name:'', date:'', length:'', genre_id:''};
-    console.log('line 7');
+    console.log(self.movies);
 
     self.addNewMovie = CollectionService.addNewMovie 
         // CollectionService.addNewMovie(newMovie);
@@ -14,7 +14,7 @@ app.controller('MoviesController', ['CollectionService', function(CollectionServ
         self.getMovies =  CollectionService.getMovies
 
     self.removeMovie= function (movies) {
-        // CollectionService.removeMovie(movies.Id);
-        console.log('in delete')
+        CollectionService.deleteMovie(movies.id);
+        console.log('in delete', self.movies)
     }
 }]);

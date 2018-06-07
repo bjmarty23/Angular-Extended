@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
         templateUrl: 'views/movies.html',
         controller: 'MoviesController as vm'
     })
-    .otherwise( { template: '<h1>404</h1>'});
+    .otherwise( {redirectTo: '/genre'});
 });
 
 

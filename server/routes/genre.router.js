@@ -3,32 +3,33 @@ const pool =require('../modules/pool.js');
 
 //post movie to database
 router.post('/', (req, res) => {
-    console.log('POST/MOVIES',req.body);
-    const movieToAdd = req.body;
-    let queryText = `INSERT INTO "movies" ("name", "date", "length", "genre_id")
-                                VALUES ($1, $2, $3, $4);`;
+    console.log('POST/GENRE',req.body);
+    const genreToAdd = req.body;
+    let queryText = `INSERT INTO "Genre" ("name")
+                                VALUES ($1);`;
 
-    pool.query(queryText, [movieToAdd.name, movieToAdd.date, movieToAdd.length, movieToAdd.genre_id])
+    pool.query(queryText, [genreToAdd.name])
     .then( (result) => {
     res.sendStatus(201);
     }).catch((error) => {
-        console.log('Failed IN movies POST', error);
+        console.log('Failed IN genre POST', error);
         res.sendStatus(500);
     });
 });
 
 //get all movies from database
 router.get('/', (req, res) => {
-    console.log('GET/movies router');
+    console.log('GET/genre router');
     //table binding here
-    const queryText= `SELECT "m".*, "Genre"."genre" FROM "movies" as "m"  JOIN "Genre" 
-    ON "m"."genre_id" = "Genre"."id";`;
+    const queryText=   `SELECT "g".* FROM "Genre" as "g" LEFT JOIN "movies" as "m" 
+                        ON "g"."id" = "m"."genre_id"
+                        GROUP BY "g"."id"`
                                 console.log('logging after get info');
     pool.query(queryText).then((result) => {
         res.send(result.rows);
         console.log(result.rows);
     }).catch(error => {
-        console.log('error GET movies Router', error);
+        console.log('error GET movies Router here', error);
         res.sendStatus(500);
     });
 });

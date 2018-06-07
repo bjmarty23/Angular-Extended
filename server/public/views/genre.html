@@ -1,0 +1,16 @@
+
+<div class = "container">
+        <form ng-submit="vm.addNewGenre(vm.genreToAdd)">
+            <input type="text" placeholder="Genre" ng-model="vm.genreToAdd.name">
+            <input type="submit">
+        </form>
+    
+        <div class="genre">
+        <div ng-repeat="genre in vm.genre.list">
+            <p>Id: {{movies.id}}<p>
+            <p>Genre: {{movies.genre}}</p>
+            <button ng-click="vm.removeGenre(genre)">Delete</button>
+    
+        </div>
+        </div>
+    </div>
