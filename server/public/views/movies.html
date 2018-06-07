@@ -18,11 +18,11 @@
     <div class="movie">
     <div ng-hide="vm.movies.list.length">No Movies.</div>
     <div ng-repeat="movies in vm.movies.list">
-        <p>movie name: {{movies.name}}<p>
+        <p>Movie name: {{movies.name}}<p>
         <p>Release Date: {{movies.date| date: 'MMMM dd, yyyy' }}</p>
         <p>Movie Length: {{movies.length}}</p>
         <p>Genre: {{movies.genre}}</p>
-        <button ng-click="vm.deleteMovies(moviesId)">Delete</button>
+        <button ng-click="vm.removeMovie(movie)">Delete</button>
 
     </div>
     </div>

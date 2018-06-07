@@ -13,7 +13,8 @@ app.controller('MoviesController', ['CollectionService', function(CollectionServ
 
         self.getMovies =  CollectionService.getMovies
 
-    self.deleteMovie= function (movieId) {
-        // CollectionService.removeMovie(movieId);
+    self.removeMovie= function (movies) {
+        // CollectionService.removeMovie(movies.Id);
+        console.log('in delete')
     }
 }]);

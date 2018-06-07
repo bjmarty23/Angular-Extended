@@ -36,12 +36,13 @@ self.getMovies = function(){
         console.log('error');
     })
 }
-self.deleteMovie = function(movieId) {
+self.removeMovie = function(movie) {
+    console.log('in delete movie services')
     $http({
         method: 'DELETE',
-        url: `/movies/${movieId}`
+        url: `/movies/${movies.Id}`
     }).then((response) => {
-        self.getMoives();
+        self.getMovies();
         alert('Success deleting!');
     }).catch((error) => {
         console.log('error making rent get request', error);
