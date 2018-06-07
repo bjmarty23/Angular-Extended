@@ -8,13 +8,13 @@ app.service('CollectionService', ['$http', function($http) {
 
 // add new movie to Database
     self.addNewMovie = function(movieToAdd) {
-        console.log('inside sdd move');
+        console.log('inside add movie');
         $http({
             method: 'POST',
             url: '/movies',
             data: movieToAdd
         }).then((response) => {
-            console.log('success adding movie');
+            alert('success adding movie');
             self.getMovies();
         }).catch((error) => {
             console.log('error posting new movie', error);
@@ -36,5 +36,18 @@ self.getMovies = function(){
         console.log('error');
     })
 }
+self.deleteMovie = function(movieId) {
+    $http({
+        method: 'DELETE',
+        url: `/movies/${movieId}`
+    }).then((response) => {
+        self.getMoives();
+        alert('Success deleting!');
+    }).catch((error) => {
+        console.log('error making rent get request', error);
+        alert('Something went wrong! Check the server.');
+    });
+}
+
 self.getMovies();
 }]);
