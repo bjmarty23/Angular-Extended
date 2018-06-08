@@ -4,14 +4,27 @@
         <input type="text" placeholder="name" ng-model="vm.movieToAdd.name">
         <input type="date" placeholder="date" ng-model="vm.movieToAdd.date">
         <input type="number" placeholder="length" ng-model="vm.movieToAdd.length">
-        <input type="genre_id" placeholder="name" ng-model="vm.movieToAdd.genre_id">
-
+        <!-- <input type="genre_id" placeholder="g" ng-model="vm.movieToAdd.genre_id"> -->
+        <!-- <select ng-model="vm.movieToAdd.genre_id"> -->
+                <!-- not selected / blank option -->
+                <!-- <option value="">---Please select---</option> -->
+                <!-- repeat over g-->
+                <!-- <option ng-repeat="genre in vm.genre.list" value="{{vm.movieToAdd.genre_id}}">{{genre.genre}}</option>
+        </select> -->
+        <!-- <select ng-model="vm.movieToAdd.genre_id" ng-options="genre for genre in vm.genre.list">
+            </select> -->
            
             <!-- <option value="">---Please select---</option> -->
             <!-- <option value="2">{{genre_id}}</option>
         
             <option ng-repeat="genres in vm.genre.list" value="{{genre.id}}">{{genre}}</option>
         </select> -->
+
+        <select type="text" ng-model="vm.movieToAdd.genre_id" placeholder="Genre">
+                <option value="">--Select Genre--</option>
+    
+                <option ng-repeat="genre in vm.genre.list" value="{{genre.id}}">{{Genre.genre}}</option>
+        </select>
         <input type="submit">
     </form>
 

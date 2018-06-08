@@ -65,13 +65,13 @@ self.getGenre = function(){
 }
 // add new movie to Database
 self.addNewgenre = function(genreToAdd) {
-    console.log('inside add movie');
+    console.log('inside add genre');
     $http({
         method: 'POST',
         url: '/genre',
         data: genreToAdd
     }).then((response) => {
-        alert('success adding movie');
+        alert('success adding genre');
         self.getGenre();
     }).catch((error) => {
         console.log('error posting new genre', error);

@@ -5,10 +5,10 @@ const pool =require('../modules/pool.js');
 router.post('/', (req, res) => {
     console.log('POST/GENRE',req.body);
     const genreToAdd = req.body;
-    let queryText = `INSERT INTO "Genre" ("name")
+    let queryText = `INSERT INTO "Genre" ("genre")
                                 VALUES ($1);`;
 
-    pool.query(queryText, [genreToAdd.name])
+    pool.query(queryText, [genreToAdd.genre])
     .then( (result) => {
     res.sendStatus(201);
     }).catch((error) => {

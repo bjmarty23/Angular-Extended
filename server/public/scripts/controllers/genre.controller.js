@@ -5,7 +5,7 @@ app.controller('GenreController', ['CollectionService', function(CollectionServi
     self.genre = CollectionService.genre;
     self.assignments = CollectionService.assignments;
 
-    self.genreToAdd = {name:''};
+    self.genreToAdd = {genre:''};
     console.log(self.genre);
 
     self.addNewGenre = CollectionService.addNewGenre

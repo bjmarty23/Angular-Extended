@@ -1,9 +1,9 @@
 
 <div class = "container">
-        <form ng-submit="vm.addNewGenre(vm.genreToAdd)">
-            <input type="text" placeholder="Genre" ng-model="vm.genreToAdd.name">
-            <input type="submit">
-        </form>
+    <form ng-submit="vm.addNewGenre(vm.genreToAdd)">
+        <input type="text" placeholder="genre" ng-model="vm.genreToAdd.genre">
+        <input type="submit">
+     </form>
        
     <div class="genre">
         <div ng-repeat="genre in vm.genre.list">
