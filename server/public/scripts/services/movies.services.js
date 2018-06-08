@@ -58,13 +58,14 @@ self.getGenre = function(){
     }).then(function(response){
         console.log('IN then GET', response);
         self.genre.list=response.data;
-        console.log(response.data);
+        console.log(self.genre)
+        // console.log(response.data);
     }).catch(function(error) {
         console.log('error', error );
     })
 }
 // add new movie to Database
-self.addNewgenre = function(genreToAdd) {
+self.addNewGenre = function(genreToAdd) {
     console.log('inside add genre');
     $http({
         method: 'POST',

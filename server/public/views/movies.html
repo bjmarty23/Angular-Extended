@@ -19,11 +19,12 @@
         
             <option ng-repeat="genres in vm.genre.list" value="{{genre.id}}">{{genre}}</option>
         </select> -->
+      
 
         <select type="text" ng-model="vm.movieToAdd.genre_id" placeholder="Genre">
                 <option value="">--Select Genre--</option>
     
-                <option ng-repeat="genre in vm.genre.list" value="{{genre.id}}">{{Genre.genre}}</option>
+                <option ng-repeat="genre in vm.genre.list" value="{{genre.id}}">{{genre.genre}}</option>
         </select>
         <input type="submit">
     </form>

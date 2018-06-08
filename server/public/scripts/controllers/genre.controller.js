@@ -8,8 +8,10 @@ app.controller('GenreController', ['CollectionService', function(CollectionServi
     self.genreToAdd = {genre:''};
     console.log(self.genre);
 
-    self.addNewGenre = CollectionService.addNewGenre
-
+    self.addNewGenre = function(genre){
+        console.log(genre)
+    CollectionService.addNewGenre(genre)
+    }
     self.getGenre =  CollectionService.getGenre
 
     self.removeGenre= function (genre) {

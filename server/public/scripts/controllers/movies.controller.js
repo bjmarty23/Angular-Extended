@@ -17,4 +17,5 @@ app.controller('MoviesController', ['CollectionService', function(CollectionServ
         CollectionService.deleteMovie(movies.id);
         console.log('in delete', self.movies)
     }
+    self.genre = CollectionService.genre;
 }]);
