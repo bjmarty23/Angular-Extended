@@ -11,7 +11,7 @@ app.controller('MoviesController', ['CollectionService', function(CollectionServ
     self.addNewMovie = CollectionService.addNewMovie 
         // CollectionService.addNewMovie(newMovie);
 
-        self.getMovies =  CollectionService.getMovies
+    self.getMovies =  CollectionService.getMovies
 
     self.removeMovie= function (movies) {
         CollectionService.deleteMovie(movies.id);

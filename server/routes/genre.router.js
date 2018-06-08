@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
     });
 });
 
-//get all movies from database
+//get all genres from database
 router.get('/', (req, res) => {
     console.log('GET/genre router');
     //table binding here
@@ -35,14 +35,14 @@ router.get('/', (req, res) => {
 });
 
 router.delete('/:id', (req,res) => {
-    console.log('DELETE movies from router', req.params.id);
-    const movieId = req.params.id;
-    pool.query('DELETE FROM "movies" WHERE "id" = $1;', [movieId])
+    console.log('DELETE genre from router', req.params.id);
+    const genreId = req.params.id;
+    pool.query('DELETE FROM "Genre" WHERE "id" = $1;', [genreId])
         .then((result) => {
             res.sendStatus(200);
         })
         .catch((error) => {
-            console.log('error delete movie router', error);
+            console.log('error delete genre router', error);
             res.sendStatus(500);
         });
 

@@ -84,7 +84,7 @@ self.deleteGenre = function(id) {
         url: `/genre/${id}`
     }).then((response) => {
         self.getGenre();
-        alert('Success deleting!' `${id}`);
+        alert('Success deleting!' );
     }).catch((error) => {
         console.log('error making rent get request', error);
         alert('Something went wrong! Check the server.');
